@@ -1,30 +1,25 @@
 class TaskMakerRust < Formula
-    desc "The new cmsMake"
-    homepage "https://edomora97.github.io/task-maker-rust/"
-    url "https://github.com/edomora97/task-maker-rust/archive/v0.5.0.tar.gz"
-    sha256 "ade1407368fc7884a974874d57c2bddfef13edad36ecc2cd99b6399b4ac7086b"
-    head "https://github.com/edomora97/task-maker-rust.git"
-    license "MPL-2.0"
+  desc "Improved version of cmsMake, rewritten in Rust"
+  homepage "https://edomora97.github.io/task-maker-rust/"
+  url "https://github.com/edomora97/task-maker-rust/archive/v0.5.1.tar.gz"
+  sha256 "10ef9635d70e70fb105f1c4ec7bada0e4caa3aabd61287b1bf7cc53e3b908223"
+  license "MPL-2.0"
+  head "https://github.com/edomora97/task-maker-rust.git"
 
-    livecheck do
-        url :stable
-    end
-  
-    depends_on "rust" => :build
-  
-    def install
-        ENV["TM_DATA_DIR"] = share
+  livecheck do
+    url :stable
+  end
 
-        system "cargo", "build", "--release", "--bin", "task-maker"
-        system "cargo", "run", "--release", "--bin", "task-maker-tools", "gen-autocompletion"
+  depends_on "rust" => :build
 
-        mv "target/release/task-maker", "target/release/task-maker-rust"
-        bin.install "target/release/task-maker-rust"
-        bin.install "target/release/task-maker-tools"
-        share.install Dir["data/*"]
+  patch do
+    url "https://gist.githubusercontent.com/bortoz/02f3c2520d9934774f0a9a4ef353253c/raw/f583d7ae867ca5ee5fbc4bed7ee80d299af8ecb7/task-maker-rust.diff"
+    sha256 "7ba50d664318738f21ae14883fd197179dfc01e3128ae4105ebc6f891a74a277"
+  end
 
-        bash_completion.install "target/autocompletion/task-maker-rust.bash"
-        fish_completion.install "target/autocompletion/task-maker-rust.fish"
-        zsh_completion.install "target/autocompletion/_task-maker-rust"
-    end
+  def install
+    ENV["TM_DATA_DIR"] = share
+    system "cargo", "install", "--bins", *std_cargo_args
+    share.install Dir["data/*"]
+  end
 end
