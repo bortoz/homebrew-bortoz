@@ -1,0 +1,19 @@
+name: Create PR
+on:
+  schedule:
+    - cron: '20 4 * * *'
+  workflow_dispatch:
+jobs:
+  update:
+    runs-on: macos-latest
+    steps:
+      - name: Update Homebrew formula
+        uses: dawidd6/action-homebrew-bump-formula@v3
+        with:
+          token: ${{ secrets.BREW_TOKEN }}
+          tap: ${{ github.repository }}
+          formula: task-maker-rust
+          livecheck: true
+          message: |
+            **⚠️ Do not merge this PR directly! ⚠️**
+            Wait for `brew test-bot` to complete, then label it with `pr-pull` instead to make the bot build and upload the bottle.
