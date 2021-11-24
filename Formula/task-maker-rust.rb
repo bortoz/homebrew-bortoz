@@ -25,7 +25,15 @@ class TaskMakerRust < Formula
 
   def install
     ENV["TM_DATA_DIR"] = share
-    system "cargo", "install", "--bins", *std_cargo_args
     share.install Dir["data/*"]
+
+    system "cargo", "install", "--bins", *std_cargo_args
+
+    mktemp "autocompletion" do
+      system "#{bin}/task-maker-tools", "gen-autocompletion", "-t", "."
+      bash_completion.install "task-maker-rust.bash"
+      fish_completion.install "task-maker-rust.fish"
+      zsh_completion.install "_task-maker-rust"
+    end
   end
 end
