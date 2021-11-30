@@ -19,22 +19,16 @@ class TaskMakerRust < Formula
 
   depends_on "rust" => :build
 
-  patch do
-    url "https://gist.githubusercontent.com/bortoz/02f3c2520d9934774f0a9a4ef353253c/raw/f583d7ae867ca5ee5fbc4bed7ee80d299af8ecb7/task-maker-rust.diff"
-    sha256 "7ba50d664318738f21ae14883fd197179dfc01e3128ae4105ebc6f891a74a277"
-  end
-
   def install
     ENV["TM_DATA_DIR"] = share
     share.install Dir["data/*"]
 
+    inreplace "Cargo.toml", "\"task-maker\"", "\"task-maker-rust\""
     system "cargo", "install", "--bins", *std_cargo_args
 
-    mktemp "autocompletion" do
-      system "#{bin}/task-maker-tools", "gen-autocompletion", "-t", "."
-      bash_completion.install "task-maker-rust.bash"
-      fish_completion.install "task-maker-rust.fish"
-      zsh_completion.install "_task-maker-rust"
-    end
+    system "#{bin}/task-maker-tools", "gen-autocompletion", "-t", "."
+    bash_completion.install "task-maker-rust.bash"
+    fish_completion.install "task-maker-rust.fish"
+    zsh_completion.install "_task-maker-rust"
   end
 end
