@@ -26,9 +26,9 @@ class TaskMakerRust < Formula
     inreplace "Cargo.toml", "\"task-maker\"", "\"task-maker-rust\""
     system "cargo", "install", "--bins", *std_cargo_args
 
-    system "#{bin}/task-maker-tools", "gen-autocompletion", "-t", "."
-    bash_completion.install "task-maker-rust.bash"
-    fish_completion.install "task-maker-rust.fish"
-    zsh_completion.install "_task-maker-rust"
+    system "#{bin}/task-maker-tools", "gen-autocompletion"
+    bash_completion.install "target/autocompletion/task-maker-rust.bash"
+    fish_completion.install "target/autocompletion/task-maker-rust.fish"
+    zsh_completion.install "target/autocompletion/_task-maker-rust"
   end
 end
