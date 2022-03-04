@@ -1,8 +1,8 @@
 class TaskMakerRust < Formula
   desc "Improved version of cmsMake, rewritten in Rust"
   homepage "https://edomora97.github.io/task-maker-rust/"
-  url "https://github.com/edomora97/task-maker-rust/archive/v0.5.2.tar.gz"
-  sha256 "f770a980ec5bb32305bebcc75a2b90a2e07b81198ac0450d9dc86c4d9f54b4fa"
+  url "https://github.com/edomora97/task-maker-rust/archive/v0.5.3.tar.gz"
+  sha256 "6d65bfb202681867c1ac12a8c1f0e452eb0873388ddfee6710374045424624d7"
   license "MPL-2.0"
   head "https://github.com/edomora97/task-maker-rust.git"
 
