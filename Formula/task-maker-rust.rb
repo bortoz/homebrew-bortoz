@@ -1,5 +1,5 @@
 class TaskMakerRust < Formula
-  desc "Improved version of cmsMake, rewritten in Rust"
+  desc "Tool for building tasks for informatics competitions"
   homepage "https://edomora97.github.io/task-maker-rust/"
   url "https://github.com/edomora97/task-maker-rust/archive/v0.5.3.tar.gz"
   sha256 "6d65bfb202681867c1ac12a8c1f0e452eb0873388ddfee6710374045424624d7"
@@ -25,7 +25,7 @@ class TaskMakerRust < Formula
     inreplace "Cargo.toml", "\"task-maker\"", "\"task-maker-rust\""
     system "cargo", "install", "--bins", *std_cargo_args
 
-    system "#{bin}/task-maker-tools", "gen-autocompletion"
+    system bin/"task-maker-tools", "gen-autocompletion"
     bash_completion.install "target/autocompletion/task-maker-rust.bash"
     fish_completion.install "target/autocompletion/task-maker-rust.fish"
     zsh_completion.install "target/autocompletion/_task-maker-rust"
