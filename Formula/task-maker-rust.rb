@@ -27,7 +27,10 @@ class TaskMakerRust < Formula
 
     system bin/"task-maker-tools", "gen-autocompletion"
     bash_completion.install "target/autocompletion/task-maker-rust.bash"
+    bash_completion.install "target/autocompletion/task-maker-tools.bash"
     fish_completion.install "target/autocompletion/task-maker-rust.fish"
+    fish_completion.install "target/autocompletion/task-maker-tools.fish"
     zsh_completion.install "target/autocompletion/_task-maker-rust"
+    zsh_completion.install "target/autocompletion/_task-maker-tools"
   end
 end
