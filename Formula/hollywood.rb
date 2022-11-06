@@ -6,6 +6,12 @@ class Hollywood < Formula
   sha256 "7eab1994b4320ee8b3de751465082aed1f5fd12a8d8082ef749ed1249ea0b583"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/bortoz/homebrew-bortoz/releases/download/hollywood-1.22"
+    sha256 cellar: :any_skip_relocation, monterey: "42092879114d81dd0176da694dc27558caf4bae8e072f3336705f180bb4b2ef7"
+    sha256 cellar: :any_skip_relocation, big_sur:  "d74ab484cf436fd589f35f722ec4967462770b08aafe6fe3b02914f94c305e38"
+  end
+
   depends_on "cmatrix"
   depends_on "coreutils"
   depends_on "fd"
