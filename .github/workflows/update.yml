@@ -13,7 +13,7 @@ jobs:
         with:
           token: ${{ secrets.BREW_TOKEN }}
           tap: ${{ github.repository }}
-          formula: task-maker-rust
+          formula: task-maker-rust, neo
           livecheck: true
           message: |
             **⚠️ Do not merge this PR directly! ⚠️**
