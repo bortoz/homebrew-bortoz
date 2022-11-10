@@ -10,6 +10,12 @@ class Neo < Formula
     url :stable
   end
 
+  bottle do
+    root_url "https://github.com/bortoz/homebrew-bortoz/releases/download/neo-0.6.1"
+    sha256 cellar: :any, monterey: "263cd3cd8a852c7832a4c4ec1796ff82190908ac5b5bd9e68a645aab89c07fb3"
+    sha256 cellar: :any, big_sur:  "e5baccab8b8571cfefe71755ede4a0a70bb905ddc7f9a8982df60696190ae570"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "make" => :build
