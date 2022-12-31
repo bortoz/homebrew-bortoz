@@ -1,4 +1,4 @@
-name: Create PR
+name: brew bump-formula
 on:
   schedule:
     - cron: '20 4 * * 3'
