@@ -2,9 +2,9 @@ cask "zephyr-sdk" do
   arch arm:   "aarch64",
        intel: "x86_64"
 
-  version "0.16.0"
-  sha256 arm:   "3ed78b2fe0fe539ac7761ed5ce0b2a23b87a0b76060cb5d201dbb989dbd83dfc",
-         intel: "d73b677c0fd16f7d6737c494d68c11d1446186a61d4a0154da910561f0de6802"
+  version "0.16.1"
+  sha256 arm:   "55ffc6b7376fdb5c7bfb6d33c846049e6c0f8ad6262f864294fc42d4059b1a26",
+         intel: "b046c7be2b90eea30f1fd907afe0f0802167030eb63560b129f263d9a5754dda"
 
   url "https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v#{version}/zephyr-sdk-#{version}_macos-#{arch}.tar.xz",
       verified: "github.com/zephyrproject-rtos/sdk-ng/"
