@@ -1,7 +1,7 @@
 class Neo < Formula
   desc "Simulates the digital rain from \"The Matrix\""
   homepage "https://github.com/st3w/neo"
-  url "https://github.com/st3w/neo/archive/v0.6.1.tar.gz"
+  url "https://github.com/st3w/neo/archive/refs/tags/v0.6.1.tar.gz"
   sha256 "744a88cc6b98a4625ae5c5ee819640561f3df87518be0f9fca00ad787814b200"
   license "GPL-3.0-or-later"
   head "https://github.com/st3w/neo.git", branch: "main"
