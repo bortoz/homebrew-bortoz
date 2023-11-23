@@ -1,7 +1,7 @@
 class TaskMakerRust < Formula
   desc "Tool for building tasks for informatics competitions"
   homepage "https://edomora97.github.io/task-maker-rust/"
-  url "https://github.com/edomora97/task-maker-rust/archive/v0.5.13.tar.gz"
+  url "https://github.com/edomora97/task-maker-rust/archive/refs/tags/v0.5.13.tar.gz"
   sha256 "cd1b6780a8bff167d1b387a31802b6956a53ffb464e0e4b1d06e5721e17f62ea"
   license "MPL-2.0"
   head "https://github.com/edomora97/task-maker-rust.git"
