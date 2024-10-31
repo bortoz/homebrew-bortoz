@@ -19,18 +19,3 @@ jobs:
             **⚠️ Do not merge this PR directly! ⚠️**
             Wait for `brew test-bot` to complete, then label it with `pr-pull` instead to make the bot build and upload the bottle.
 
-  update-casks:
-    runs-on: macos-latest
-    env:
-      CASKS: zephyr-sdk
-      HOMEBREW_GITHUB_API_TOKEN: ${{ secrets.BREW_TOKEN }}
-      TAP: bortoz/bortoz
-    steps:
-      - name: Tap repository
-        run: brew tap "${{ env.TAP }}"
-
-      - name: Update casks
-        run: >
-          brew livecheck --full-name --newer-only --json --quiet --tap="${{ env.TAP }}" --casks ${{ env.CASKS }} |
-          yq 'map(.version.latest + " " + .cask).[]' |
-          xargs -L 1 brew bump-cask-pr --no-audit --no-browse --version
