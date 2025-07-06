@@ -23,7 +23,7 @@ jobs:
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
-          branch: main
+          branch: master
           token: ${{ github.token }}
 
       - name: Delete branch
