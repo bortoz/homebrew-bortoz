@@ -4,7 +4,7 @@ class TaskMakerRust < Formula
   url "https://github.com/olimpiadi-informatica/task-maker-rust/archive/refs/tags/v0.6.13.tar.gz"
   sha256 "6aef5a2d410871ef40d14035ef8d8989ce357d6e2e8bf3b03654d89a55441c18"
   license "MPL-2.0"
-  head "https://github.com/olimpiadi-informatica/task-maker-rust.git"
+  head "https://github.com/olimpiadi-informatica/task-maker-rust.git", branch: "master"
 
   livecheck do
     url :stable
