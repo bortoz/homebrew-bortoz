@@ -11,9 +11,10 @@ class TaskMakerRust < Formula
   end
 
   bottle do
-    root_url "https://github.com/bortoz/homebrew-bortoz/releases/download/task-maker-rust-0.7.1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3e1b59f6e77c1cbdd6dca5c8b1d55fa34cf9f6495e82b55d8261fec4d1b221d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e5e22d54ab27b63015d0bec9b80816620eabc25bcbddfb94427d1d95327ed65"
+    root_url "https://github.com/bortoz/homebrew-bortoz/releases/download/task-maker-rust-0.7.2"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "01087141c430f4a9e2b9f98166a4e941f3c9eb28e0e994e49350b3801ed886d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02ea30d3ce4f32f9cc4f2a2b215e567e63acd3353500248a0e535f56787ec1c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef583f058ab9ca1357b277e20f8297153de7c5ca4b520697d709a6a79d7873a3"
   end
 
   depends_on "rust" => :build
