@@ -8,6 +8,9 @@ jobs:
   update-formulae:
     runs-on: macos-latest
     steps:
+      - name: Trust me bro
+        run: brew trust bortoz/bortoz
+
       - name: Update formulae
         uses: dawidd6/action-homebrew-bump-formula@master
         with:
