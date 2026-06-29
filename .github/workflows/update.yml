@@ -9,7 +9,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Update formulae
-        uses: dawidd6/action-homebrew-bump-formula@latest
+        uses: dawidd6/action-homebrew-bump-formula@master
         with:
           token: ${{ secrets.BREW_TOKEN }}
           tap: ${{ github.repository }}
